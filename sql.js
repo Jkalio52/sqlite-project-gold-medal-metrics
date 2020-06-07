@@ -94,8 +94,9 @@ Returns a SQL query string that will find the event this country has
 won the most medals, along with the number of medals aliased to 'count'.
 */
 const bestEvent = country => {
-  return;
+  return countryBestWithCount('event', country);
 };
+
 
 /*
 Returns a SQL query string that will find the number of male medalists.
