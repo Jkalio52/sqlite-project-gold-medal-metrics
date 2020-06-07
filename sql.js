@@ -169,6 +169,8 @@ const orderedSports = (country, field, sortAscending) => {
         GROUP BY sport ${orderingString}`;
 };
 
+
+
 module.exports = {
   createCountryTable,
   createGoldMedalTable,
