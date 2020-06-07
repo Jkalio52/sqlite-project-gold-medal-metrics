@@ -152,9 +152,21 @@ won medals in. It should include the number of medals, aliased as 'count',
 as well as the percentage of this country's wins the sport represents,
 aliased as 'percent'. Optionally ordered by the given field in the specified direction.
 */
-
 const orderedSports = (country, field, sortAscending) => {
-  return;
+    let orderingString = '';
+    if (field) {
+        if (sortAscending) {
+            orderingString = `ORDER BY ${field} ASC`;
+        } else {
+            orderingString = `ORDER BY ${field} DESC`;
+        }
+    }
+  return `SELECT sport, COUNT(sport) AS Count, (COUNT(sport) * 100 / (select COUNT(*)
+        FROM GoldMedal
+        WHERE country = '${country}')) AS Percent
+        FROM GoldMedal
+        WHERE country = '${country}'
+        GROUP BY sport ${orderingString}`;
 };
 
 module.exports = {
