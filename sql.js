@@ -84,16 +84,15 @@ const bestDiscipline = country => {
 Returns a SQL query string that will find the sport this country has 
 won the most medals, along with the number of medals aliased to 'count'.
 */
-
 const bestSport = country => {
-  return;
+  return countryBestWithCount('sport', country);
 };
+
 
 /*
 Returns a SQL query string that will find the event this country has 
 won the most medals, along with the number of medals aliased to 'count'.
 */
-
 const bestEvent = country => {
   return;
 };
