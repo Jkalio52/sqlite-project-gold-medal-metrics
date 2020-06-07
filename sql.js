@@ -48,10 +48,18 @@ const goldMedalNumber = country => {
 Returns a SQL query string that will find the year where the given country 
 won the most summer medals, along with the number of medals aliased to 'count'.
 */
-
-const mostSummerWins = country => {
-  return;
+const mostSummerWins = (season, country) => {
+    if (['Summer', 'Winter'].includes(season)) {
+        return 'SELECT year, COUNT(*) AS Count
+        FROM GoldMedal
+        WHERE country = '${season}'
+        GROUP BY year
+        ORDER BY COUNT(*) DESC
+        LIMIT 1';
+    }
+  return null;
 };
+
 
 /*
 Returns a SQL query string that will find the year where the given country 
