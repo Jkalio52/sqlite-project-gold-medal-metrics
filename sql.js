@@ -109,10 +109,10 @@ const numberMenMedalists = country => {
 /*
 Returns a SQL query string that will find the number of female medalists.
 */
-
 const numberWomenMedalists = country => {
-  return;
+  return numberGenderMedalists('Women', country;
 };
+
 
 /*
 Returns a SQL query string that will find the athlete with the most medals.
