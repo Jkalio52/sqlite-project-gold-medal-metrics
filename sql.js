@@ -131,10 +131,20 @@ const mostMedaledAthlete = country => {
 Returns a SQL query string that will find the medals a country has won
 optionally ordered by the given field in the specified direction.
 */
-
 const orderedMedals = (country, field, sortAscending) => {
-  return;
+    let orderingString = '';
+    if (field) {
+        if (sortAscending) {
+            orderingString = `ORDER BY ${field} ASC`;
+        } else {
+            orderingString = `ORDER BY ${field} DESC`;
+        }
+    }
+  return `SELECT * 
+        FROM GoldMedal 
+        WHERE country = '${country}' ${orderingString}`;
 };
+
 
 /*
 Returns a SQL query string that will find the sports a country has
