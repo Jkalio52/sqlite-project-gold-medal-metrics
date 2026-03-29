@@ -28,6 +28,6 @@
     "fs": "0.0.1-security",
     "mocha": "^10.8.2",
     "react-router-dom": "^7.12.0",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^6.0.1"
   }
 }
