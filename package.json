@@ -27,7 +27,7 @@
     "express": "^4.22.2",
     "fs": "0.0.1-security",
     "mocha": "^10.8.2",
-    "react-router-dom": "^7.12.0",
+    "react-router-dom": "^7.16.0",
     "sqlite3": "^6.0.1"
   }
 }
